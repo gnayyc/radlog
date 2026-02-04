@@ -30,7 +30,7 @@ CREDENTIALS_FILE = CONFIG_DIR / 'credentials.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # License API
-LICENSE_API = 'https://radlog-license.YOUR_SUBDOMAIN.workers.dev'  # 部署後替換
+LICENSE_API = 'https://radlog-license.cyyang.workers.dev'
 
 
 class RadLogApp:
