@@ -5,7 +5,7 @@ compatibility_date = "2024-01-01"
 # KV Namespace for storing licenses
 [[kv_namespaces]]
 binding = "LICENSES"
-id = "YOUR_KV_NAMESPACE_ID"  # 部署時替換
+id = "f59e9d3511e648ae993a9589fecb6573"
 
 # Environment variables
 [vars]
