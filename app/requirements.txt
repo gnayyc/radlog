@@ -1,0 +1,6 @@
+google-auth>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-api-python-client>=2.0.0
+requests>=2.28.0
+keyboard>=0.13.5  # Windows 全局快捷鍵
+pyinstaller>=6.0.0  # 打包成 .exe
