@@ -52,26 +52,55 @@ export default {
 
       // POST /webhook/lemonsqueezy
       if (path === '/webhook/lemonsqueezy' && request.method === 'POST') {
-        // 驗證 webhook 簽名（可選，建議生產環境啟用）
+        // 驗證 webhook 簽名
         const signature = request.headers.get('X-Signature');
+        const rawBody = await request.text();
         
-        const body = await request.json();
+        // 可選：驗證簽名（生產環境建議啟用）
+        if (env.WEBHOOK_SECRET && signature) {
+          const encoder = new TextEncoder();
+          const key = await crypto.subtle.importKey(
+            'raw',
+            encoder.encode(env.WEBHOOK_SECRET),
+            { name: 'HMAC', hash: 'SHA-256' },
+            false,
+            ['sign']
+          );
+          const sig = await crypto.subtle.sign('HMAC', key, encoder.encode(rawBody));
+          const expectedSig = Array.from(new Uint8Array(sig))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join('');
+          
+          if (signature !== expectedSig) {
+            console.log('Invalid webhook signature');
+            return jsonResponse({ error: 'Invalid signature' }, 401, corsHeaders);
+          }
+        }
+        
+        const body = JSON.parse(rawBody);
         
         // Lemon Squeezy order_created 事件
+        // 支援 paid 狀態的訂單
         if (body.meta?.event_name === 'order_created') {
-          const email = body.data?.attributes?.user_email?.toLowerCase().trim();
+          const attrs = body.data?.attributes;
+          const email = attrs?.user_email?.toLowerCase().trim();
           const orderId = body.data?.id;
+          const orderNumber = attrs?.order_number;
+          const status = attrs?.status;
           
-          if (email) {
+          // 只處理已付款的訂單
+          if (email && status === 'paid') {
             // 存入 KV
             await env.LICENSES.put(email, JSON.stringify({
               orderId: orderId,
+              orderNumber: orderNumber,
               purchasedAt: new Date().toISOString(),
               source: 'lemonsqueezy',
+              userName: attrs?.user_name || '',
             }));
             
-            console.log(`License added for: ${email}`);
-            return jsonResponse({ success: true, email }, 200, corsHeaders);
+            console.log(`License added for: ${email} (order #${orderNumber})`);
+            return jsonResponse({ success: true, email, orderNumber }, 200, corsHeaders);
           }
         }
         
