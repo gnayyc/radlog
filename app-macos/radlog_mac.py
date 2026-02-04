@@ -26,7 +26,7 @@ TOKEN_FILE = CONFIG_DIR / 'token.json'
 CREDENTIALS_FILE = CONFIG_DIR / 'credentials.json'
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-LICENSE_API = 'https://radlog-license.YOUR_SUBDOMAIN.workers.dev'
+LICENSE_API = 'https://radlog-license.cyyang.workers.dev'
 
 
 class RadLogApp(rumps.App):
