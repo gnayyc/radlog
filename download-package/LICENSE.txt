@@ -1,0 +1,58 @@
+MIT License
+
+Copyright (c) 2026 RadLog
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+PURCHASE LICENSE TERMS
+
+By purchasing RadLog, you agree to the following terms:
+
+1. LICENSE SCOPE
+   - One purchase grants one user license
+   - May be installed on multiple computers for personal use
+   - May not be redistributed or resold
+
+2. ACCOUNT BINDING
+   - License is bound to the Google account used for purchase
+   - Same Google account must be used for software authorization
+   - Account cannot be transferred to another person
+
+3. SUPPORT
+   - Email support provided for 1 year from purchase date
+   - Bug fixes and minor updates included
+   - Major version upgrades may require additional purchase
+
+4. REFUND POLICY
+   - 30-day money-back guarantee
+   - Refunds processed through Lemon Squeezy
+   - License will be revoked upon refund processing
+
+5. PRIVACY
+   - We only collect email address for license verification
+   - No patient data is transmitted to our servers
+   - Google Sheets integration uses your own Google account
+
+For support: support@radlog.cyyang.dev
+License verification: https://radlog-license.cyyang.workers.dev
+
+Purchase Date: [Automatically filled by Lemon Squeezy]
+License Email: [Your purchase email]
